@@ -1,25 +1,24 @@
-#See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER app
+# Use the official .NET Core SDK as a parent image
+FROM mcr.microsoft.com/dotnet/sdk:8.0.3 AS build
 WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Release
-WORKDIR /src
-COPY ["CDS.Weather/CDS.Weather.csproj", "CDS.Weather/"]
-RUN dotnet restore "./CDS.Weather/CDS.Weather.csproj"
+# Copy the project file and restore any dependencies (use .csproj for the project name)
+COPY *.csproj ./
+RUN dotnet restore
+
+# Copy the rest of the application code
 COPY . .
-WORKDIR "/src/CDS.Weather"
-RUN dotnet build "./CDS.Weather.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./CDS.Weather.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+# Publish the application
+RUN dotnet publish -c Release -o out
 
-FROM base AS final
+# Build the runtime image
+FROM mcr.microsoft.com/dotnet/aspnet:8.0.3 AS runtime
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app/out ./
+
+# Expose the port CDSWeatherForecast-web-api application will run on
+EXPOSE 80
+
+# Start the application
 ENTRYPOINT ["dotnet", "CDS.Weather.dll"]
