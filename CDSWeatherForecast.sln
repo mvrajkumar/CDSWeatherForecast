@@ -13,6 +13,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDS.WeatherForecast.Domain"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDS.WeatherForecast.Domain.Tests.Unit", "CDS.WeatherForecast.Domain.Tests.Unit\CDS.WeatherForecast.Domain.Tests.Unit.csproj", "{61F4E169-3E3A-45FF-98DE-7C6FF8D45CEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDS.Weather", "CDS.Weather\CDS.Weather.csproj", "{35E31D75-6E7B-4948-9BCA-608D1C1B52D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDS.Weather.Tests.Unit", "CDS.Weather.Tests.Unit\CDS.Weather.Tests.Unit.csproj", "{1083C109-C197-4A88-B6EF-B3AEA4C043E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDS.Weather.Tests.Integration", "CDS.Weather.Tests.Integration\CDS.Weather.Tests.Integration.csproj", "{F4024081-6083-4CFB-9598-48A300076AA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +48,17 @@ Global
 		{61F4E169-3E3A-45FF-98DE-7C6FF8D45CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61F4E169-3E3A-45FF-98DE-7C6FF8D45CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61F4E169-3E3A-45FF-98DE-7C6FF8D45CEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35E31D75-6E7B-4948-9BCA-608D1C1B52D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35E31D75-6E7B-4948-9BCA-608D1C1B52D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35E31D75-6E7B-4948-9BCA-608D1C1B52D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35E31D75-6E7B-4948-9BCA-608D1C1B52D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1083C109-C197-4A88-B6EF-B3AEA4C043E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1083C109-C197-4A88-B6EF-B3AEA4C043E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1083C109-C197-4A88-B6EF-B3AEA4C043E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1083C109-C197-4A88-B6EF-B3AEA4C043E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4024081-6083-4CFB-9598-48A300076AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4024081-6083-4CFB-9598-48A300076AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4024081-6083-4CFB-9598-48A300076AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4024081-6083-4CFB-9598-48A300076AA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
