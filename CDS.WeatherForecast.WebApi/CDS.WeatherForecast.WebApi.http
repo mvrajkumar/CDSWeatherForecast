@@ -1,0 +1,6 @@
+@CDS.WeatherForecast.WebApi_HostAddress = http://localhost:5283
+
+GET {{CDS.WeatherForecast.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
